@@ -1,0 +1,20 @@
+{
+  "theme": [
+    255,
+    93,
+    108,
+    193
+  ],
+  "bunifuiOSSwitch1": true,
+  "password": "",
+  "email": "",
+  "versionText": "",
+  "enableForge": false,
+  "jvmarg": "",
+  "mcargs": "",
+  "israndom": true,
+  "isdebug": false,
+  "minecraftpath": "",
+  "mem": "",
+  "javapath": ""
+}
