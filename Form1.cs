@@ -65,10 +65,11 @@ namespace ColaLauncher
                     return;
                 }
             }
-            if (launcher.LaunchIt.temp["javapath"]==null)
+            if (launcher.LaunchIt.temp["javapath"]==null || String.IsNullOrEmpty((string)launcher.LaunchIt.temp["javapath"]) || String.IsNullOrWhiteSpace((string)launcher.LaunchIt.temp["javapath"]))
             {
-                MessageBox.Show("你没有设置java路径.(如果你找不到路径,但确实安装了java,可以改为java.exe)");
-                return;
+                MessageBox.Show("你没有设置java路径,将使用环境变量中的javaw.exe进行启动");
+                launcher.LaunchIt.temp["javapath"]="javaw.exe";
+                //return;
             }
 
             
@@ -93,6 +94,7 @@ namespace ColaLauncher
             {
                 JVMArgs = (String)launcher.LaunchIt.temp["jvmarg"];
             }
+            try{
             if (bunifuiOSSwitch1.Value)
             {
                 JObject ret = null;
@@ -109,8 +111,9 @@ namespace ColaLauncher
             }
             //MessageBox.Show(ret);
             ColaLauncher.launcher.LaunchIt.Save();
-            if (Form4.instance!=null) 
-             ColaLauncher.launcher.LaunchIt.Save(Form4.instance);
+            //if (Form4.instance!=null) 
+            // ColaLauncher.launcher.LaunchIt.Save(Form4.instance);
+            }catch(Exception exc){MessageBox.Show("启动失败! \n"+exc.ToString());this.Show();}
         }
 
         private bool isNumber(string v)
