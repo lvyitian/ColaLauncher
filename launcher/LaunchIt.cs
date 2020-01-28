@@ -45,7 +45,7 @@ namespace ColaLauncher.launcher
             JObject temp = JObject.Parse(readTextFile(MinecraftDir + "\\versions\\" + version + "\\" + version + ".json"));
             String lib = "";
             bool enableForge = false;
-            if (temp["enableForge"] != null && (bool)temp["enableForge"])
+            if (LaunchIt.temp["enableForge"] != null && (bool)LaunchIt.temp["enableForge"])
                 enableForge = true;
             foreach (JObject i in temp["libraries"])
             {
