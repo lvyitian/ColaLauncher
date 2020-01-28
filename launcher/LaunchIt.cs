@@ -69,7 +69,11 @@ namespace ColaLauncher.launcher
             lib += "\"" + MinecraftDir + "\\versions\\" + version + "\\" + version + ".jar" + "\"";
             if (debug)
                 MessageBox.Show(lib);
-            String MainClass = (String)temp["mainClass"];
+            String MainClass = null;
+            if(enableForge)
+              MainClass=(String)temp["mainClass"];
+            else
+            	MainClass="net.minecraft.client.main.Main";
             String mcArgs = "";
             
             try

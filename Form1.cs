@@ -82,7 +82,7 @@ namespace ColaLauncher
             {
                 memo = int.Parse((String)launcher.LaunchIt.temp["mem"]);
             }
-            if (launcher.LaunchIt.temp["isdebu"]!=null && ((bool)launcher.LaunchIt.temp["isdebu"]))
+            if (launcher.LaunchIt.temp["isdebug"]!=null && ((bool)launcher.LaunchIt.temp["isdebug"]))
             {
                 debug = true;
             }
