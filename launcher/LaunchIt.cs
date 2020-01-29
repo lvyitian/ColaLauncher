@@ -82,11 +82,11 @@ namespace ColaLauncher.launcher
                 {
                     if (i is JValue && ((JValue)i).Type == JTokenType.String)
                     {
-                        mcArgs += ((String)i).Replace("${user_properties}", "{}").Replace("${auth_player_name}", username).Replace("${version_name}", "H2OCLauncher").Replace("${ game_directory}", "\"" + MinecraftDir + "\"").Replace("${assets_root}", "\"" + MinecraftDir + "\\assets\"").Replace("${assets_index_name}", (String)temp["assetIndex"]["id"]).Replace("${auth_uuid}", UUID).Replace("${auth_access_token}", Token).Replace("${user_type}", Token == UUID ? "Legacy" : "Mojang").Replace("${version_type}", "H2OCLauncher").Replace("${game_directory}", "\"" + MinecraftDir + "\"") + " ";
+                        mcArgs += ((String)i).Replace("${user_properties}", "{}").Replace("${auth_player_name}", username).Replace("${version_name}", "H2OCLauncher")/*.Replace("${game_directory}", "\"" + MinecraftDir + "\"")*/.Replace("${assets_root}", "\"" + MinecraftDir + "\\assets\"").Replace("${assets_index_name}", (String)temp["assetIndex"]["id"]).Replace("${auth_uuid}", UUID).Replace("${auth_access_token}", Token).Replace("${user_type}", Token == UUID ? "Legacy" : "Mojang").Replace("${version_type}", "H2OCLauncher").Replace("${game_directory}", "\"" + MinecraftDir + "\"") + " ";
                     }
                 }
             }
-            catch (Exception) { mcArgs = ((String)temp["minecraftArguments"]).Replace("${user_properties}", "{}").Replace("${auth_player_name}", username).Replace("${version_name}", "H2OCLauncher").Replace("${ game_directory}", "\"" + MinecraftDir + "\"").Replace("${assets_root}", "\"" + MinecraftDir + "\\assets\"").Replace("${assets_index_name}", (String)temp["assetIndex"]["id"]).Replace("${auth_uuid}", UUID).Replace("${auth_access_token}", Token).Replace("${user_type}", Token == UUID ? "Legacy" : "Mojang").Replace("${version_type}", "H2OCLauncher").Replace("${game_directory}", "\"" + MinecraftDir + "\""); }
+            catch (Exception) { mcArgs = ((String)temp["minecraftArguments"]).Replace("${user_properties}", "{}").Replace("${auth_player_name}", username).Replace("${version_name}", "H2OCLauncher")/*.Replace("${game_directory}", "\"" + MinecraftDir + "\"")*/.Replace("${assets_root}", "\"" + MinecraftDir + "\\assets\"").Replace("${assets_index_name}", (String)temp["assetIndex"]["id"]).Replace("${auth_uuid}", UUID).Replace("${auth_access_token}", Token).Replace("${user_type}", Token == UUID ? "Legacy" : "Mojang").Replace("${version_type}", "H2OCLauncher").Replace("${game_directory}", "\"" + MinecraftDir + "\""); }
             if (debug)
                 MessageBox.Show(mcArgs);
             String Maxmem = mem;
